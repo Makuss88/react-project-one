@@ -9,6 +9,7 @@ const HeaderCartButton = props => {
     <button
       // type={props.type || 'button'}
       className={classes.button}
+      onClick={props.onClick}
     >
       <span className={classes.icon}>
         <CartIcon />
