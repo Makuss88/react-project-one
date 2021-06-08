@@ -1,14 +1,40 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import CartIcon from '../../Cart/CartIcon';
+import CartContext from '../../store/cart-context';
 
 import classes from './HeaderCartButton.module.css';
 
 const HeaderCartButton = props => {
+  const [btnIsHighligthed, setBtnIsHighlighted] = useState(false);
+  const cartCxt = useContext(CartContext);
+  const { items } = cartCxt;
+
+  const numberOfCartItems = items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
+
+  const btnClasses = `${classes.button} ${btnIsHighligthed ? classes.bump : ''}`;
+
+  useEffect(() => {
+    if (items.length === 0) {
+      // setBtnIsHighlighted(false); // maybe better without setTimout??
+      return;
+    }
+    setBtnIsHighlighted(true);
+
+    const timer = setTimeout(() => {
+      setBtnIsHighlighted(false)
+    }, 500)
+
+    return () => {
+      clearTimeout(timer);
+    }
+  }, [items]);
+
   return (
     <button
-      // type={props.type || 'button'}
-      className={classes.button}
+      className={btnClasses}
       onClick={props.onClick}
     >
       <span className={classes.icon}>
@@ -16,7 +42,7 @@ const HeaderCartButton = props => {
       </span>
       <span>Your Cart</span>
       <span className={classes.badge}>
-        3
+        {numberOfCartItems}
       </span>
     </button>
   );
