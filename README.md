@@ -31,7 +31,5 @@ Udemy Course can be found [here](2).
 - [ ] Optional: React Summary & Core Feature Walkthrough
 - [ ] Course Roundup 
 
-<!-- TODO: add legacy sections later -->
-
 [1]: (https://www.udemy.com/user/maximilian-schwarzmuller/)
 [2]: (https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
