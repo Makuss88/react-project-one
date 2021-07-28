@@ -1,37 +1,41 @@
-import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from "react-router-dom";
 
-import Welcome from './pages/Welcome';
-import Products from './pages/Products';
-import MainHeader from './component/MainHeader';
-import ProductDetails from './pages/ProductDeatils';
+import Comments from "./components/comments/Comments";
+import NewCommentForm from "./components/comments/NewCommentForm";
+import AllQuotes from "./pages/AllQuotes";
+import NewQuote from "./pages/NewQuote";
+import QuoteDetails from "./pages/QuoteDetails";
 
+
+import MainNavigation from './components/layout/MainNavigation'
 const App = () => {
   return (
     <div>
-      <header>
-        <MainHeader />
-      </header>
-      <main>
-        <Switch>
+      <header><MainNavigation /></header>
+      <section>
+        <Switch >
           <Route path="/" exact>
-            <Redirect to="welcome" />
+            <Redirect to="/quotes" />
           </Route>
-          <Route path="/welcome" >
-            <Welcome />
+          <Route path='/quotes' exact>
+            <AllQuotes />
           </Route>
-          <Route path="/products" exact>
-            <Products />
+          <Route path='/quotes/:quoteId'>
+            <QuoteDetails />
           </Route>
-          <Route path="/products/:productId" >
-            <ProductDetails />
+          <Route path='/new-quote'>
+            <NewQuote />
           </Route>
-
+          <Route path='/comments'>
+            <Comments />
+          </Route>
+          <Route path='/new-comment'>
+            <NewCommentForm />
+          </Route>
         </Switch>
-      </main>
-
+      </section>
     </div>
   );
-};
+}
 
 export default App;
