@@ -1,8 +1,8 @@
 # React - The Complete Guide (incl Hooks, React Router, Redux)
 
-Instructor: [Maximilian Schwarzmüller](1).
+Instructor: [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/).
 
-Udemy Course can be found [here](2).
+Udemy Course can be found [here](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).
 
 ## Sections
 
@@ -30,6 +30,3 @@ Udemy Course can be found [here](2).
 - [ ] A (Pretty Deep Dive) Introduction to Next.js
 - [ ] Optional: React Summary & Core Feature Walkthrough
 - [ ] Course Roundup 
-
-[1]: (https://www.udemy.com/user/maximilian-schwarzmuller/)
-[2]: (https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
