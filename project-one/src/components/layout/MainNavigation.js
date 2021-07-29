@@ -6,13 +6,18 @@ import classes from "./MainNavigation.module.css";
 const MainNavigation = () => {
   return (
     <header className={classes.header}>
+      <div className={classes.logo}>Great Quotes!</div>
       <nav className={classes.nav}>
         <ul>
           <li>
-            <NavLink activeClassName={classes.active} to="/comments">Comments</NavLink>
+            <NavLink to="/quotes" activeClassName={classes.active}>
+              All Quotes
+            </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={classes.active} to="/new-comment">New Comments</NavLink>
+            <NavLink to="/new-quote" activeClassName={classes.active}>
+              Add New Quote
+            </NavLink>
           </li>
         </ul>
       </nav>
