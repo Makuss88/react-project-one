@@ -5,9 +5,15 @@
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
+  text-align: center;
 }
 
 .app h1 {
-  margin: 0;
-  text-align: center;
+  margin: 20px;
+  /* text-align: center; */
+}
+
+.app p {
+  margin: 15px;
+  /* text-align: center; */
 }
