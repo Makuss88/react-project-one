@@ -1,9 +1,10 @@
 import React, { useState, Fragment, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-import { BASE_URL, BASE_URL_JOKE } from './014section-database/assets/Text'
+import { BASE_URL, BASE_URL_JOKE, BASE_URL_POST } from './assets/Text'
 
-import MoviesList from './014section-database/components/MoviesList';
+import MoviesList from './components/MoviesList';
+import AddMovie from './components/AddMovie'
 import './App.css';
 
 const App = () => {
@@ -35,26 +36,40 @@ const App = () => {
     setIsLoading(false);
   }, [])
 
-  useEffect(() => {
-    axiosMoviesHandlers();
-  }, [axiosMoviesHandlers]);
 
-  const fetchMoviesHandlers = () => {
-    fetch(BASE_URL)
-      .then(response => response.json())
-      .then(data => {
-        const transform = data.results.map(movieData => {
-          return {
-            id: movieData.episode_id,
-            title: movieData.title,
-            openingText: movieData.opening_crawl,
-            releaseDate: movieData.release_date,
-          };
-        });
-        setMovies(transform);
+
+  const fetchMoviesHandlers = useCallback(async () => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(BASE_URL_POST);
+      if (!response.ok) {
+        throw new Error("dupa zbita")
       }
-      );
-  }
+      const data = await response.json()
+
+      const loadedMovie = [];
+      for (const key in data) {
+        loadedMovie.push({
+          id: key,
+          title: data[key].title,
+          openingText: data[key].openingText,
+          releaseDate: data[key].releaseDate,
+
+        })
+      }
+
+      setMovies(loadedMovie);
+    } catch (error) {
+      setError(error.message);
+    }
+    setIsLoading(false);
+  }, [])
+
+  useEffect(() => {
+    fetchMoviesHandlers();
+  }, [fetchMoviesHandlers]);
 
   const axiosJokeHandlers = () => {
 
@@ -79,9 +94,25 @@ const App = () => {
     contetn = <p>Loading...</p>;
   }
 
+  const addMovieHandler = async (movie) => {
+    console.log("movie", movie);
+    const response = await fetch(BASE_URL_POST, {
+      method: "POST",
+      body: JSON.stringify(movie),
+      headers: {
+        'Contetn-Type': 'application/json'
+      }
+    });
+    const data = await response.json()
+    console.log("data", data);
+  }
+
   return (
     <Fragment>
       <section>
+        <section>
+          <AddMovie onAddMovie={addMovieHandler} />
+        </section>
         <button onClick={axiosJokeHandlers}>Fetch JOKES!</button>
         <button onClick={fetchMoviesHandlers}>Fetch Movies</button>
         <button onClick={axiosMoviesHandlers}>Axiox Movies</button>
