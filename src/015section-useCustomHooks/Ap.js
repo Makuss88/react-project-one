@@ -4,27 +4,41 @@ import Tasks from './components/Tasks/Tasks';
 import NewTask from './components/NewTask/NewTask';
 
 import useHTTP from './hooks/use-http';
-import { URL } from './helper'
+
+import { URL } from './helper'; //mój dodatek
 
 function Ap() {
   const [tasks, setTasks] = useState([]);
 
-  const transformTask = tasksObj => {
-    const loadedTasks = [];
-    for (const taskKey in tasksObj) {
-      loadedTasks.push({ id: taskKey, text: tasksObj[taskKey].text });
-    }
-    setTasks(loadedTasks);
-  }
 
-  const { isLoading, error, sendRequest: fetchTasks } = useHTTP(
-    { url: URL },
-    transformTask
-  );
+  // // 1.
+  // const transformTask = useCallback((tasksObj) => { //dodanie useCallback
+  //   const loadedTasks = [];
+  //   for (const taskKey in tasksObj) {
+  //     loadedTasks.push({ id: taskKey, text: tasksObj[taskKey].text });
+  //   };
+  //   setTasks(loadedTasks);
+  // }, []);
+
+  const { isLoading, error, sendRequest: fetchTasks } = useHTTP(); // zmiana use-http, co innego podaje, na dzień dobry
 
   useEffect(() => {
-    fetchTasks();
-  }, []);
+    //2.
+    const transformTask = (tasksObj) => { //bez useCallback
+      const loadedTasks = [];
+      for (const taskKey in tasksObj) {
+        loadedTasks.push({ id: taskKey, text: tasksObj[taskKey].text });
+      };
+      setTasks(loadedTasks);
+    };
+
+
+    console.log("szukam")
+    fetchTasks(
+      { url: URL },
+      transformTask
+    );
+  }, [fetchTasks]); // generalnie mamy problem z ciagłym szukaniem, wiec dodaje useCallback-nr1, lub bez-nr2
 
   const taskAddHandler = (task) => {
     setTasks((prevTasks) => prevTasks.concat(task));
