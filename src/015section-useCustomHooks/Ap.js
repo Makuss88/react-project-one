@@ -10,7 +10,6 @@ import { URL } from './helper'; //mój dodatek
 function Ap() {
   const [tasks, setTasks] = useState([]);
 
-
   // // 1.
   // const transformTask = useCallback((tasksObj) => { //dodanie useCallback
   //   const loadedTasks = [];

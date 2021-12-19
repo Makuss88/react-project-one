@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "song-20bdd",
+    "firebase use": "song-20bdd"
+  },
+  "targets": {}
+}
