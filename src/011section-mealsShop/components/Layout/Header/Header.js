@@ -2,7 +2,7 @@ import React from 'react';
 
 import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 
-import imageMeals from '../../../assets/img/meals.jpg';
+import imageMeals from '../../../img/meals.jpg';
 
 import classes from './Header.module.css';
 
