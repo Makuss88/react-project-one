@@ -1,4 +1,4 @@
-import React from 'react';
+import {Fragment} from 'react';
 
 import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 
@@ -8,7 +8,7 @@ import classes from './Header.module.css';
 
 const Header = (props) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <header className={classes.header}>
         <h1>Makuss Meals!</h1>
         <HeaderCartButton onClick={props.onShowCart} />
@@ -16,7 +16,7 @@ const Header = (props) => {
       <div className={classes["main-image"]}>
         <img src={imageMeals} alt="My inage of Meals!" />
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
