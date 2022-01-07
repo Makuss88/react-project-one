@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/react-project-one/static/css/main.e51c3efb.chunk.css",
-    "main.js": "/react-project-one/static/js/main.feab3e92.chunk.js",
-    "main.js.map": "/react-project-one/static/js/main.feab3e92.chunk.js.map",
+    "main.css": "/react-project-one/static/css/main.038b0df4.chunk.css",
+    "main.js": "/react-project-one/static/js/main.e7d22c3a.chunk.js",
+    "main.js.map": "/react-project-one/static/js/main.e7d22c3a.chunk.js.map",
     "runtime-main.js": "/react-project-one/static/js/runtime-main.4f89f21e.js",
     "runtime-main.js.map": "/react-project-one/static/js/runtime-main.4f89f21e.js.map",
-    "static/js/2.12c26b3e.chunk.js": "/react-project-one/static/js/2.12c26b3e.chunk.js",
-    "static/js/2.12c26b3e.chunk.js.map": "/react-project-one/static/js/2.12c26b3e.chunk.js.map",
+    "static/js/2.7d29759b.chunk.js": "/react-project-one/static/js/2.7d29759b.chunk.js",
+    "static/js/2.7d29759b.chunk.js.map": "/react-project-one/static/js/2.7d29759b.chunk.js.map",
     "index.html": "/react-project-one/index.html",
-    "static/css/main.e51c3efb.chunk.css.map": "/react-project-one/static/css/main.e51c3efb.chunk.css.map",
-    "static/js/2.12c26b3e.chunk.js.LICENSE.txt": "/react-project-one/static/js/2.12c26b3e.chunk.js.LICENSE.txt"
+    "static/css/main.038b0df4.chunk.css.map": "/react-project-one/static/css/main.038b0df4.chunk.css.map",
+    "static/js/2.7d29759b.chunk.js.LICENSE.txt": "/react-project-one/static/js/2.7d29759b.chunk.js.LICENSE.txt",
+    "static/media/meals.2971f633.jpg": "/react-project-one/static/media/meals.2971f633.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.4f89f21e.js",
-    "static/js/2.12c26b3e.chunk.js",
-    "static/css/main.e51c3efb.chunk.css",
-    "static/js/main.feab3e92.chunk.js"
+    "static/js/2.7d29759b.chunk.js",
+    "static/css/main.038b0df4.chunk.css",
+    "static/js/main.e7d22c3a.chunk.js"
   ]
 }
