@@ -1,0 +1,49 @@
+:root {
+  --primary: green;
+  --alert: rgb(177, 177, 65);
+  --danger: rgb(179, 45, 45);
+  --teal: teal;
+}
+
+.spinner {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.spinner:after {
+  content: ' ';
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  animation: spinner 1.2s linear infinite;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.primary:after {
+  border: 6px solid var(--primary);
+  border-color: var(--primary) transparent var(--primary) transparent;
+}
+
+.alert:after {
+  border: 6px solid var(--alert);
+  border-color: var(--alert) transparent var(--alert) transparent;
+}
+
+.danger:after {
+  border: 6px solid var(--danger);
+  border-color: var(--danger) transparent var(--danger) transparent;
+}
+
+.teal:after {
+  border: 6px solid var(--teal);
+  border-color: var(--teal) transparent var(--teal) transparent;
+}
