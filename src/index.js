@@ -1,15 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 //only to 018section about redux
-import { Provider } from "react-redux";
-import store from "./018section-redux/store/index";
+// import { Provider } from 'react-redux'
+// import store from "./018section-redux/store/index";
 
-import App from "./App";
+//only to 001section about redux
+import { StoreProvider } from './001section-TypeScript/Store.tsx'
+
+import App from './App'
 
 ReactDOM.render(
-  <Provider store={store}>
+  // <Provider store={store}><App /></Provider>,
+  <StoreProvider>
     <App />
-  </Provider>,
-  document.getElementById("root")
-);
+  </StoreProvider>,
+  document.getElementById('root'),
+)
