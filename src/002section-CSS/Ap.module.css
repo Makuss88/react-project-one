@@ -1,0 +1,27 @@
+.parent {
+  width: 200px;
+  height: 500px;
+  background: red;
+  display: flex;
+  flex-direction: column;
+  /* flex-flow: ; */
+}
+
+.child1 {
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
+
+.child2 {
+  width: 100px;
+  /* height: 100%; */
+  flex-grow: 1;
+  background: green;
+}
+
+.child3 {
+  width: 150px;
+  height: 150px;
+  background: aqua;
+}

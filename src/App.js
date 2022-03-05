@@ -1,7 +1,13 @@
 import React from 'react'
+import { Provider } from 'react-redux'
 
-import Ap from './001section-TypeScript/Ap.tsx'
+// import Ap from './001section-TypeScript/Ap.tsx'
 // import Ap from './001section-TypeScript'
+
+// import Ap from './002section-CSS/Ap'
+
+// import Ap from './003section-sliderBoxShadow/Ap'
+
 // import Ap from "./009section-store/Ap";
 
 // import Ap from './008section-UserInput/Ap'
@@ -19,10 +25,15 @@ import Ap from './001section-TypeScript/Ap.tsx'
 // import Ap from "./018section-redux/Ap";
 // import "./018section-redux/index.css";
 
+import Ap from './019section-reduxDeeper/Ap'
+import store from './019section-reduxDeeper/store/index.js'
+
 const App = () => {
   return (
     <div>
-      <Ap />
+      <Provider store={store}>
+        <Ap />
+      </Provider>
     </div>
   )
 }

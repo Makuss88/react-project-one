@@ -1,0 +1,40 @@
+.parent1 {
+  box-shadow: inset 0px -40px 24px -40px red;
+  /* transition: all 0.1s; */
+  height: 100px;
+  width: 180px;
+  overflow-y: scroll;
+}
+
+.parent2 {
+  box-shadow: inset 0px 40px 24px -40px red;
+  /* transition: box-shadow 0.3s; */
+  height: 100px;
+  width: 180px;
+  overflow-y: scroll;
+}
+
+.parent3 {
+  box-shadow: inset 0px 40px 24px -40px red, inset 0px -40px 24px -40px red;
+  /* transition: box-shadow 0.3s; */
+  height: 100px;
+  width: 180px;
+  overflow-y: scroll;
+}
+
+.parent1::-webkit-scrollbar {
+  display: none;
+}
+
+.parent2::-webkit-scrollbar {
+  display: none;
+}
+
+.parent3::-webkit-scrollbar {
+  display: none;
+}
+
+.dupa {
+  width: 180px;
+  background: yellow;
+}
