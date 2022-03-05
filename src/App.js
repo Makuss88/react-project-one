@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 
 // import Ap from './002section-CSS/Ap'
 
-// import Ap from './003section-sliderBoxShadow/Ap'
+import Ap from './003section-sliderBoxShadow/Ap'
 
 // import Ap from "./009section-store/Ap";
 
@@ -25,7 +25,7 @@ import { Provider } from 'react-redux'
 // import Ap from "./018section-redux/Ap";
 // import "./018section-redux/index.css";
 
-import Ap from './019section-reduxDeeper/Ap'
+// import Ap from './019section-reduxDeeper/Ap'
 import store from './019section-reduxDeeper/store/index.js'
 
 const App = () => {

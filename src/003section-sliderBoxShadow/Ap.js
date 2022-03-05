@@ -1,28 +1,28 @@
 import React, { useState } from 'react'
 import classes from './Ap.module.css'
 
-function useScrollTop() {
-  const [top, setScrollTop] = useState(0)
-  const [he, setHe] = useState(0)
+function useScroll() {
+  const [top, setTop] = useState(0)
+  const [down, setDown] = useState(0)
   const onScroll = (event) => {
-    setHe(event.target.scrollHeight - event.target.offsetHeight - 10)
-    setScrollTop(event.target.scrollTop)
+    setDown(event.target.scrollHeight - event.target.offsetHeight - 10)
+    setTop(event.target.scrollTop)
   }
-  return [top, he, { onScroll }]
+  return [top, down, { onScroll }]
 }
 
 export const Ap = () => {
-  const [scrollTop, he, scrollProps] = useScrollTop()
+  const [top, down, scrollProps] = useScroll()
 
-  console.log(scrollTop)
+  console.log(top)
   return (
-    <div className={classes.dupa}>
+    <div className={classes.upper}>
       <div
         {...scrollProps}
         className={
-          scrollTop < 8
+          top < 10
             ? classes.parent1
-            : scrollTop > he
+            : top > down
             ? classes.parent2
             : classes.parent3
         }
